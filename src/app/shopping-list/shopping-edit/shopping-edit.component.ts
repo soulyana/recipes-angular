@@ -4,6 +4,8 @@ import { Ingredient } from '../../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { format } from 'path';
+import { FORMERR } from 'dns';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -50,5 +52,10 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     // Called once, before the instance is destroyed.
     // Add 'implements OnDestroy' to the class.
     this.subscription.unsubscribe();
+  }
+
+  onClear() {
+    this.slForm.reset();
+    this.editMode = false;
   }
 }
